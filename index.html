@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Collective Company</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-blue-100 to-white">
+    <img src="logo.png" alt="Cloud Collective Logo" class="w-60 h-60 mb-6" />
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Cloud Collective Company</h1>
+    <p class="text-xl md:text-2xl text-gray-700 max-w-xl">Financial services built for small businesses. We specialize in bookkeeping, tax services, and financial planning — so you can focus on what you do best.</p>
+  </section>
+
+  <!-- About -->
+  <section class="py-16 px-6 bg-gray-50 text-center">
+    <h2 class="text-3xl font-semibold mb-4">About Us</h2>
+    <p class="max-w-2xl mx-auto text-gray-600 text-lg">Cloud Collective is a modern accounting firm helping small businesses stay organized and plan ahead. Whether you're a startup or an established local business, we're here to simplify your finances and save you time.</p>
+  </section>
+
+  <!-- Services -->
+  <section class="py-16 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-8">Our Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="p-6 border rounded-lg shadow-sm">
+        <h3 class="text-xl font-bold mb-2">Bookkeeping</h3>
+        <p class="text-gray-600">Accurate, up-to-date financial records you can trust. We handle the numbers so you don't have to.</p>
+      </div>
+      <div class="p-6 border rounded-lg shadow-sm">
+        <h3 class="text-xl font-bold mb-2">Tax Services</h3>
+        <p class="text-gray-600">Stay compliant and maximize your deductions. We'll prepare, file, and plan ahead for tax season.</p>
+      </div>
+      <div class="p-6 border rounded-lg shadow-sm">
+        <h3 class="text-xl font-bold mb-2">Financial Planning</h3>
+        <p class="text-gray-600">From budgeting to strategic growth, we help you make smart, informed business decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Waiting List -->
+  <section class="py-16 px-6 bg-gray-100 text-center">
+    <h2 class="text-3xl font-semibold mb-4">Join the Waiting List</h2>
+    <p class="mb-6 text-gray-600">Fill out the form to join the waiting list. We'll notify you as soon as we're accepting new clients.</p>
+    <form action="https://formspree.io/f/xnnzanvy" method="POST" class="max-w-xl mx-auto space-y-4">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded" required />
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded" required />
+      <input type="tel" name="phone" placeholder="Your Phone Number" class="w-full p-3 border rounded" />
+      <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Join the List</button>
+    </form>
+  </section>
+
+  <footer class="text-center py-8 text-sm text-gray-500">
+    © 2025 Cloud Collective Company. All rights reserved.
+  </footer>
+</body>
+</html>
