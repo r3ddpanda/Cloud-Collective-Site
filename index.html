@@ -5,81 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cloud Collective Company</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.7); }
+      50% { box-shadow: 0 0 25px 5px rgba(96, 165, 250, 0.6); }
+    }
+    .fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .glow-on-hover:hover {
+      animation: pulseGlow 1.2s ease-in-out infinite;
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-900 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-white shadow fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-end items-center">
+      <div class="space-x-6 text-gray-700 text-sm font-medium">
+        <a href="#" class="hover:text-blue-600 transition-colors">Home</a>
+        <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+        <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
+        <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-blue-100 to-white">
-    <img src="logo.png" alt="Cloud Collective Logo" class="w-60 h-60 mb-6" />
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Cloud Collective Company</h1>
-    <p class="text-xl md:text-2xl text-gray-700 max-w-xl">Financial services built for small businesses. We specialize in bookkeeping, tax services, and financial analysis — so you can focus on what you do best.</p>
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24">
+    <img src="logo.png" alt="Cloud Collective Logo" class="w-60 h-60 mb-6 animate-on-scroll" />
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-on-scroll">Cloud Collective Company</h1>
+    <p class="text-xl md:text-2xl text-gray-700 max-w-xl animate-on-scroll">Financial services built for small businesses. We specialize in bookkeeping, tax services, and financial analysis — so you can focus on what you do best.</p>
   </section>
 
   <!-- About -->
-  <section class="py-16 px-6 bg-gray-50 text-center">
-    <h2 class="text-3xl font-semibold mb-4">About Us</h2>
-    <p class="max-w-2xl mx-auto text-gray-600 text-lg">Cloud Collective is a modern accounting firm helping small businesses stay organized and plan ahead. Whether you're a startup or an established local business, we're here to simplify your finances and save you time.</p>
+  <section id="about" class="py-16 px-6 bg-gray-50 text-center">
+    <h2 class="text-3xl font-semibold mb-4 animate-on-scroll">About Us</h2>
+    <p class="max-w-2xl mx-auto text-gray-600 text-lg animate-on-scroll">Cloud Collective is a modern accounting firm helping small businesses stay organized and plan ahead. Whether you're a startup or an established local business, we're here to simplify your finances and save you time.</p>
   </section>
 
   <!-- Services -->
-  <section class="py-16 px-6 text-center">
-    <h2 class="text-3xl font-semibold mb-8">Our Services</h2>
+  <section id="services" class="py-16 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-8 animate-on-scroll">Our Services</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <div class="p-6 border rounded-lg shadow-sm">
+      <div class="p-6 border rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500 ease-in-out animate-on-scroll glow-on-hover">
         <h3 class="text-xl font-bold mb-2">Bookkeeping</h3>
         <p class="text-gray-600">Accurate, up-to-date financial records you can trust. We handle the numbers so you don't have to.</p>
       </div>
-      <div class="p-6 border rounded-lg shadow-sm">
+      <div class="p-6 border rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500 ease-in-out animate-on-scroll glow-on-hover">
         <h3 class="text-xl font-bold mb-2">Tax Services</h3>
         <p class="text-gray-600">Stay compliant and maximize your deductions. We'll prepare, file, and plan ahead for tax season.</p>
       </div>
-      <div class="p-6 border rounded-lg shadow-sm">
-        <h3 class="text-xl font-bold mb-2">Financial Analysis</h3>
+      <div class="p-6 border rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500 ease-in-out animate-on-scroll glow-on-hover">
+        <h3 class="text-xl font-bold mb-2">Financial Planning</h3>
         <p class="text-gray-600">From budgeting to strategic growth, we help you make smart, informed business decisions.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact / Waiting List -->
-  <section class="py-16 px-6 bg-gray-100 text-center">
-    <h2 class="text-3xl font-semibold mb-4">Join the Waiting List</h2>
-    <p class="mb-6 text-gray-600">Fill out the form to join the waiting list — we’ll be in touch soon to schedule your free consultation.</p>
-    <form action="https://formspree.io/f/xnnzanvy" method="POST" data-formspree="true" class="max-w-xl mx-auto space-y-4" onsubmit="handleSubmit(event)">
-  <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded" required />
-  <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded" required />
-  <input type="tel" name="phone" placeholder="Your Phone Number" class="w-full p-3 border rounded" required />
-  <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Join the List</button>
-  <p id="success-message" class="text-green-600 text-sm mt-2 hidden">Thank you! We'll be in touch soon.</p>
-</form>
-
-<script>
-  function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const data = new FormData(form);
-
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        form.reset();
-        document.getElementById('success-message').classList.remove('hidden');
-      } else {
-        alert("There was a problem submitting the form.");
-      }
-    }).catch(error => {
-      alert("Something went wrong.");
-    });
-  }
-</script>
-
+  <section id="contact" class="py-16 px-6 bg-gray-100 text-center">
+    <h2 class="text-3xl font-semibold mb-4 animate-on-scroll">Join the Waiting List</h2>
+    <p class="mb-6 text-gray-600 animate-on-scroll">Fill out the form to join the waiting list — we’ll be in touch soon to schedule your free consultation.</p>
+    <form action="https://formspree.io/f/xnnzanvy" method="POST" data-formspree="true" class="max-w-xl mx-auto space-y-4 animate-on-scroll" onsubmit="handleSubmit(event)">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded" required />
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded" required />
+      <input type="tel" name="phone" placeholder="Your Phone Number" class="w-full p-3 border rounded" required />
+      <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 hover:shadow-lg transform hover:scale-105 transition-all duration-300">Join the List</button>
+      <p id="success-message" class="text-green-600 text-sm mt-2 hidden">Thank you! We'll be in touch soon.</p>
+    </form>
   </section>
 
   <footer class="text-center py-8 text-sm text-gray-500">
     © 2025 Cloud Collective Company. All rights reserved.
   </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const data = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          const msg = document.getElementById('success-message');
+          msg.classList.remove('hidden');
+          msg.classList.add('fade-in-up');
+        } else {
+          alert("There was a problem submitting the form.");
+        }
+      }).catch(error => {
+        alert("Something went wrong.");
+      });
+    }
+
+    // Animate on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
