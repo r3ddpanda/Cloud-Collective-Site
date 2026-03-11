@@ -45,6 +45,63 @@
       color: #525252;
       font-size: 18px;
     }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+    .hero-button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 16px;
+      font-weight: 700;
+      border: 1px solid #111;
+    }
+    .hero-button.primary {
+      background: #111;
+      color: #fff;
+    }
+    .hero-button.secondary {
+      background: #fff;
+      color: #111;
+    }
+    .quick-contact {
+      max-width: 980px;
+      margin: 28px auto 0;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 24px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+    }
+    .quick-contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.4fr;
+      gap: 14px;
+      align-items: center;
+    }
+    .quick-contact-label {
+      text-align: left;
+    }
+    .quick-contact-label strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .quick-contact-label span {
+      color: #525252;
+      font-size: 14px;
+    }
+    .quick-contact-link {
+      display: block;
+      padding: 14px 16px;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      background: #fafafa;
+      font-weight: 700;
+    }
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -132,14 +189,14 @@
       font-size: 14px;
     }
     .contact-section {
-      background: #0a0a0a;
+      background: #1f3a2a;
       color: #fff;
       border-top: 1px solid #262626;
       padding: 72px 0;
     }
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 32px;
       align-items: start;
     }
@@ -195,7 +252,7 @@
       border: none;
       border-radius: 16px;
       background: #fff;
-      color: #0a0a0a;
+      color: #1f3a2a;
       font-size: 16px;
       font-weight: 700;
       padding: 14px 18px;
@@ -228,10 +285,11 @@
       font-size: 14px;
     }
     @media (max-width: 900px) {
-      .grid-2, .contact-grid, .form-grid { grid-template-columns: 1fr; }
+      .grid-2, .contact-grid, .form-grid, .quick-contact-grid { grid-template-columns: 1fr; }
       .detail-top { flex-direction: column; }
       .pill { align-self: flex-start; }
       .card-head h2, .card-body h3 { font-size: 26px; }
+      .quick-contact-label { text-align: center; }
     }
   </style>
 </head>
@@ -241,6 +299,23 @@
       <div class="eyebrow">Mailbox Installations</div>
       <h1>Pick your mailbox style.</h1>
       <p class="hero-copy">Straight to the point — two installation options, clear pricing, and custom work available on request. Most installations are completed in under 1 hour.</p>
+
+      <div class="hero-actions">
+        <a class="hero-button primary" href="#request">Request Installation</a>
+        <a class="hero-button secondary" href="tel:4704280765">Call Now</a>
+      </div>
+
+      <div class="quick-contact">
+        <div class="quick-contact-grid">
+          <div class="quick-contact-label">
+            <strong>Ready to get started?</strong>
+            <span>Request installation below or reach out directly.</span>
+          </div>
+          <a class="quick-contact-link" href="tel:4704280765">Call: (470) 428-0765</a>
+          <a class="quick-contact-link" href="sms:4704280765">Text: (470) 428-0765</a>
+          <a class="quick-contact-link" href="mailto:levi@cloudcollectivecompany.com">Email</a>
+        </div>
+      </div>
 
       <div class="grid-2">
         <div class="card">
@@ -309,7 +384,7 @@
                 <h3>Wood Post Numbering</h3>
                 <p>Add custom address numbering to the wood post</p>
               </div>
-              <div class="pill">+$75</div>
+              <div class="pill">+$50</div>
             </div>
             <p class="detail-text">Upgrade your wood mailbox with vertical address numbering on the post.</p>
           </div>
@@ -318,22 +393,22 @@
     </div>
   </section>
 
-  <section class="contact-section">
+  <section class="contact-section" id="request">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-copy">
           <div class="eyebrow" style="color:#a3a3a3;">Get in touch</div>
-          <h2 style="font-size: clamp(30px, 4vw, 52px);">Ready for a new mailbox?</h2>
-          <p class="main">Submit the form below to request your installation. You can also call, text, or email if you prefer. If you want something custom, just ask — customizations can be discussed and priced separately.</p>
+          <h2 style="font-size: clamp(30px, 4vw, 52px);">Request your mailbox installation.</h2>
+          <p class="main">Submit the form below and your request will be emailed directly. You can also call, text, or email if you prefer.</p>
 
           <div class="panel">
             <h3>Request Installation</h3>
-            <p class="small">Fill this out and your request will be emailed directly to Levi.</p>
-            <form action="https://formsubmit.co/levi@cloudcollectivecompany.com" method="POST" target="_top">
+            <p class="small">Fill this out and your request will be emailed directly.</p>
+            <form action="https://formsubmit.co/levi@cloudcollectivecompany.com" method="POST" accept-charset="UTF-8" target="_top">
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New Mailbox Installation Request" />
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="https://formsubmit.co/thank-you" />
+              <input type="hidden" name="_next" value="https://cloudcollectivecompany.com/" />
 
               <div class="form-grid">
                 <div>
@@ -357,9 +432,10 @@
                   <select id="mailbox_option" name="mailbox_option" required>
                     <option value="">Select an option</option>
                     <option value="Metal mailbox - $375">Metal mailbox - $375</option>
-                    <option value="Wood mailbox - $500">Wood mailbox - $500</option>
-                    <option value="Wood mailbox + numbering - $575">Wood mailbox + numbering - $575</option>
                     <option value="Metal mailbox with included sticker numbering - $375">Metal mailbox with included sticker numbering - $375</option>
+                    <option value="Wood mailbox - $500">Wood mailbox - $500</option>
+                    <option value="Wood mailbox with sticker numbering - $500">Wood mailbox with sticker numbering - $500</option>
+                    <option value="Wood mailbox + post numbering - $550">Wood mailbox + post numbering - $550</option>
                   </select>
                 </div>
                 <div class="full">
@@ -374,7 +450,7 @@
           </div>
 
           <div class="panel">
-            <h3>Contact</h3>
+            <h3>Contact Directly</h3>
             <div class="contact-links">
               <a class="contact-link" href="tel:4704280765">Call: (470) 428-0765</a>
               <a class="contact-link" href="sms:4704280765">Text: (470) 428-0765</a>
@@ -388,5 +464,6 @@
       </div>
     </div>
   </section>
-</body>
+
+  </body>
 </html>
